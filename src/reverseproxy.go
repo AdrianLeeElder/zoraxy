@@ -24,12 +24,12 @@ func ReverseProxtInit() {
 	/*
 		Load Reverse Proxy Global Settings
 	*/
-	inboundPort := 80
+	inboundPort := 8082
 	if sysdb.KeyExists("settings", "inbound") {
 		sysdb.Read("settings", "inbound", &inboundPort)
 		SystemWideLogger.Println("Serving inbound port ", inboundPort)
 	} else {
-		SystemWideLogger.Println("Inbound port not set. Using default (80)")
+		SystemWideLogger.Println("Inbound port not set. Using default (8082)")
 	}
 
 	useTls := false
